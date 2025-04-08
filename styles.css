@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --accent-color: #e74c3c;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 80px 0;
+    margin-bottom: 40px;
+}
+
+.template-card {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.template-img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.builder-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.preview-section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.resume-paper {
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Template 1 Styles */
+.template-1 .header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.template-1 .section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* Template 2 Styles */
+.template-2 .header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.template-2 .section-title {
+    background-color: var(--light-color);
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+
+/* Template 3 Styles */
+.template-3 {
+    background-color: #f9f9f9;
+}
+
+.template-3 .header {
+    border-left: 5px solid var(--accent-color);
+    padding-left: 15px;
+    margin-bottom: 20px;
+}
+
+.template-3 .section-title {
+    color: var(--accent-color);
+    margin-top: 20px;
+}
+
+/* Add more template styles as needed */
+
+.hidden {
+    display: none;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+}

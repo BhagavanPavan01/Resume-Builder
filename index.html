@@ -17,7 +17,7 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top custom-shadow">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <i class="fas fa-file-alt me-2"></i>ProResume
@@ -28,26 +28,31 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
+                        <a class="nav-link active" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="#templates">Templates</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#builder">Builder</a>
+                        <a class="nav-link active" href="#builder">Builder</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#preview">Preview</a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section text-center">
+    <section id="Home" class="hero-section text-center">
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">Create Your Perfect Resume</h1>
             <p class="lead mb-5">Choose from 500+ professionally designed templates and land your dream job</p>
-            <a href="#templates" class="btn btn-light btn-lg px-4 me-2">Browse Templates</a>
-            <a href="#builder" class="btn btn-outline-light btn-lg px-4">Start Building</a>
+            <a href="https://create.microsoft.com/en-us/templates/resumes" class="btn btn-light btn-lg px-4 me-2">Browse
+                Templates</a>
+            <a href="https://create.microsoft.com/en-us/template/creative-teaching-resume-1138bdc2-5b51-4800-816d-fcf90d7e6af9"
+                class="btn btn-outline-light btn-lg px-4">Start Building</a>
         </div>
     </section>
 
@@ -60,14 +65,16 @@
             </div>
 
             <div class="row">
+                <div class="row" id="templatesContainer"></div>
                 <!-- Template 1 -->
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="template-card" onclick="selectTemplate(1)">
-                        <img src="https://via.placeholder.com/300x400/3498db/ffffff?text=Template+1"
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/06d0c445-99b0-4bbe-b293-0512920be966/thumbnails/600/geometric-resume-modern-geometric-1-1-e92756c7bb2d.webp"
                             class="template-img card-img-top" alt="Template 1">
                         <div class="card-body text-center">
                             <h5 class="card-title">Professional</h5>
-                            <button class="btn btn-sm btn-outline-primary">Select</button>
+                            <a href="https://docs.google.com/document/d/1HVU3Hmni-zvTPq7pl2MhpZ2_vHZ9Ta6l/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
                         </div>
                     </div>
                 </div>
@@ -75,11 +82,12 @@
                 <!-- Template 2 -->
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="template-card" onclick="selectTemplate(2)">
-                        <img src="https://via.placeholder.com/300x400/2c3e50/ffffff?text=Template+2"
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/ce343500-4aff-4dfa-b337-57c78459c6ee/thumbnails/616/modern-nursing-resume-orange-modern-geometric-2-1-648db1446843.webp"
                             class="template-img card-img-top" alt="Template 2">
                         <div class="card-body text-center">
                             <h5 class="card-title">Modern</h5>
-                            <button class="btn btn-sm btn-outline-primary">Select</button>
+                            <a href="https://docs.google.com/document/d/1VgH55CO_lnZLS0nuYrpryXu8Y17YbZ2k/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
                         </div>
                     </div>
                 </div>
@@ -87,11 +95,12 @@
                 <!-- Template 3 -->
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="template-card" onclick="selectTemplate(3)">
-                        <img src="https://via.placeholder.com/300x400/e74c3c/ffffff?text=Template+3"
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/d81b18ac-9be2-4733-8e23-267c8035a1ee/thumbnails/600/creative-sales-resume-yellow-modern-simple-1-1-ea1b84a95542.webp"
                             class="template-img card-img-top" alt="Template 3">
                         <div class="card-body text-center">
                             <h5 class="card-title">Creative</h5>
-                            <button class="btn btn-sm btn-outline-primary">Select</button>
+                            <a href="https://docs.google.com/document/d/1DiovUEkV6Iwp1pMRQIzkKQju3VzIh_cn/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
                         </div>
                     </div>
                 </div>
@@ -99,22 +108,77 @@
                 <!-- Template 4 -->
                 <div class="col-md-4 col-lg-3 mb-4">
                     <div class="template-card" onclick="selectTemplate(4)">
-                        <img src="https://via.placeholder.com/300x400/2ecc71/ffffff?text=Template+4"
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/f342c465-dd43-45a1-bd10-28181beba3d3/thumbnails/616/bold-modern-resume-blue-modern-simple-2-1-9a3d35db1f29.webp"
                             class="template-img card-img-top" alt="Template 4">
                         <div class="card-body text-center">
                             <h5 class="card-title">Minimalist</h5>
-                            <button class="btn btn-sm btn-outline-primary">Select</button>
+                            <a href="https://docs.google.com/document/d/1BCv5Fg74RGeMVt7WgOp4bL_wiZ3fznNW/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- Template 5 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="template-card" onclick="selectTemplate(5)">
+                        <img src="https://create.microsoft.com/_next/image?url=https%3A%2F%2Fcdn.create.microsoft.com%2Fuploadedfiles%2Fuploads%2F0d3de95f-7574-481e-8bcc-9c74c65d1cc3-basic-sales-resume-2-1.webp&w=1920&q=90"
+                            class="template-img card-img-top" alt="Template 5">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Structured</h5>
+                            <a href="https://docs.google.com/document/d/1r3-npjajdYtl6V8jeiM24GORh-6hgFYB/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 6 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="template-card" onclick="selectTemplate(6)">
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/b97c34b7-bcc4-4366-92c6-8b5a08ba27cc/thumbnails/616/ats-stylish-accounting-resume-2-1-a41c9dc1a410.webp"
+                            class="template-img card-img-top" alt="Template 6">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Green</h5>
+                            <a href="https://docs.google.com/document/d/1TqiafQW9P6hoeZ3WErtmmcBLcXyuJyBR/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Template 7 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="template-card" onclick="selectTemplate(7)">
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/76a688d7-5368-4432-bc8d-64806f42928e/thumbnails/600/simple-perennial-resume-white-modern-bold-2-1-074395799d25.webp"
+                            class="template-img card-img-top" alt="Template 7">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Creative</h5>
+                            <a href="https://docs.google.com/presentation/d/1ot_NKpcLIdKVXVZvcG7TOGJVE_sf1bLf/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template 8 -->
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="template-card" onclick="selectTemplate(8)">
+                        <img src="https://cdn.create.microsoft.com/catalog-assets/en-us/a32a147f-1f69-4fd5-8a39-c25b2a0093e8/thumbnails/616/stylish-teaching-resume-red-modern-simple-2-1-86dfc2cb0037.webp"
+                            class="template-img card-img-top" alt="Template 8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Minimalist</h5>
+                            <a href="https://docs.google.com/document/d/1a5PLvj4iBkPCZWsFayxK-_-6FDgNSqhJ/edit?usp=sharing&ouid=103564657463461977015&rtpof=true&sd=true"
+                                class="btn btn-sm btn-outline-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+
                 <!-- Add more template placeholders (total 50+) -->
                 <!-- In a real app, you would have actual template images -->
             </div>
-
-            <div class="text-center mt-4">
-                <button class="btn btn-primary">Load More Templates</button>
-            </div>
+        </div>
+        <div class="text-center mt-4">
+            <button id="loadMoreTemplates" class="btn btn-primary">Load More Templates</button>
+        </div>
+        
         </div>
     </section>
 
@@ -367,7 +431,7 @@
                 </div>
             </div>
             <hr class="my-4 bg-light">
-            <p class="mb-0">&copy; 2023 ProResume. All rights reserved.</p>
+            <p class="mb-0">&copy; 2025 BP Creations. All rights reserved.</p>
         </div>
     </footer>
 </body>

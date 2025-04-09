@@ -86,6 +86,141 @@
      });
  }
  
+
+//  document.addEventListener('DOMContentLoaded', function() {
+//     const loadMoreBtn = document.getElementById('loadMoreTemplates');
+//     const templatesContainer = document.getElementById('templatesContainer');
+//     const hiddenTemplates = templatesContainer.querySelectorAll('.d-none');
+//     let templatesToShow = 4; // Number of templates to show each time
+    
+//     loadMoreBtn.addEventListener('click', function() {
+//         // Get all currently hidden templates
+//         const currentlyHidden = Array.from(templatesContainer.querySelectorAll('.d-none'));
+        
+//         // Show the next batch of templates
+//         currentlyHidden.slice(0, templatesToShow).forEach(template => {
+//             template.classList.remove('d-none');
+//         });
+        
+//         // Hide the button if no more templates to show
+//         if (currentlyHidden.length <= templatesToShow) {
+//             loadMoreBtn.style.display = 'none';
+//         }
+//     });
+    
+//     // Initially hide the button if there are no hidden templates
+//     if (hiddenTemplates.length === 0) {
+//         loadMoreBtn.style.display = 'none';
+//     }
+// });
+ 
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const loadMoreBtn = document.getElementById('loadMoreTemplates');
+//     const templatesContainer = document.getElementById('templatesContainer');
+//     const hiddenTemplates = templatesContainer.querySelectorAll('.hidden-template');
+//     const templatesPerLoad = 4; // Number to show each click
+    
+//     // Hide all templates beyond first 4 initially
+//     hiddenTemplates.forEach(template => {
+//         template.style.display = 'none';
+//     });
+
+//     loadMoreBtn.addEventListener('click', function() {
+//         // Get all hidden templates
+//         const currentlyHidden = Array.from(templatesContainer.querySelectorAll('.hidden-template[style="display: none;"]'));
+        
+//         // Show next batch
+//         const templatesToShow = currentlyHidden.slice(0, templatesPerLoad);
+//         templatesToShow.forEach(template => {
+//             template.style.display = 'block';
+//         });
+
+//         // Hide button if no more templates
+//         if (currentlyHidden.length <= templatesPerLoad) {
+//             loadMoreBtn.style.display = 'none';
+//         }
+//     });
+
+//     // Hide button if no hidden templates
+//     if (hiddenTemplates.length === 0) {
+//         loadMoreBtn.style.display = 'none';
+//     }
+// });
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const loadMoreBtn = document.getElementById('loadMoreTemplates');
+//     const hiddenTemplates = document.querySelectorAll('.initially-hidden');
+//     const templatesPerLoad = 4;
+    
+//     // Only run if there are hidden templates
+//     if (hiddenTemplates.length > 0) {
+//         // Show button initially
+//         loadMoreBtn.style.display = 'inline-block';
+        
+//         loadMoreBtn.addEventListener('click', function() {
+//             // Convert NodeList to array and filter only hidden ones
+//             const currentlyHidden = Array.from(hiddenTemplates).filter(t => 
+//                 window.getComputedStyle(t).display === 'none'
+//             );
+            
+//             // Show next batch
+//             currentlyHidden.slice(0, templatesPerLoad).forEach(template => {
+//                 template.style.display = 'block';
+//             });
+            
+//             // Hide button if no more templates
+//             if (currentlyHidden.length <= templatesPerLoad) {
+//                 loadMoreBtn.style.display = 'none';
+//             }
+//         });
+//     } else {
+//         // Hide button if no hidden templates exist
+//         loadMoreBtn.style.display = 'none';
+//     }
+// });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loadMoreBtn = document.getElementById('loadMoreTemplates');
+    const templatesContainer = document.getElementById('templatesContainer');
+    const allTemplates = templatesContainer.querySelectorAll('.template-card');
+    const templatesPerLoad = 4;
+    let visibleCount = 4; // First 4 are visible
+    
+    // Initially hide the button if there are no hidden templates
+    if (allTemplates.length <= visibleCount) {
+        loadMoreBtn.style.display = 'none';
+    }
+
+    loadMoreBtn.addEventListener('click', function() {
+        // Show next batch of templates
+        const nextBatch = Math.min(visibleCount + templatesPerLoad, allTemplates.length);
+        
+        for (let i = visibleCount; i < nextBatch; i++) {
+            allTemplates[i].style.display = 'block';
+        }
+        
+        visibleCount = nextBatch;
+        
+        // Hide button if all templates are visible
+        if (visibleCount >= allTemplates.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+        
+        // Smooth scroll to newly shown templates
+        if (visibleCount < allTemplates.length) {
+            allTemplates[visibleCount-1].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
+        }
+    });
+});
+
  // Add experience field
  function addExperienceField() {
      const experienceFields = document.getElementById('experienceFields');
@@ -362,3 +497,6 @@
      
      // Get the resume element
      const element = document.getElementById('resumePreview');
+ }
+
+

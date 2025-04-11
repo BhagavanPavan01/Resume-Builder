@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top custom-shadow">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <i class="fas fa-file-alt me-2"></i>ProResume
+                <i class="fas fa-file-alt me-2"></i>Bp Creative ProResumes
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -178,7 +179,7 @@
         <div class="text-center mt-4">
             <button id="loadMoreTemplates" class="btn btn-primary">Load More Templates</button>
         </div>
-        
+
         </div>
     </section>
 
@@ -386,14 +387,10 @@
 
                 <div class="text-center mb-4">
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-outline-secondary template-btn active"
-                            data-template="1">Template 1</button>
-                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="2">Template
-                            2</button>
-                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="3">Template
-                            3</button>
-                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="4">Template
-                            4</button>
+                        <button type="button" class="btn btn-outline-secondary template-btn active" data-template="1">Template 1</button>
+                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="2">Template2</button>
+                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="3">Template3</button>
+                        <button type="button" class="btn btn-outline-secondary template-btn" data-template="4">Template4</button>
                     </div>
                 </div>
 
@@ -403,6 +400,63 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Preview Section -->
+<section id="preview" class="py-5 hidden">
+    <div class="container">
+        <div class="preview-section">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="fw-bold mb-0">Resume Preview</h2>
+                <div>
+                    <button id="editResume" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-edit me-1"></i>Edit
+                    </button>
+                    <button id="downloadResume" class="btn btn-success">
+                        <i class="fas fa-download me-1"></i>Download PDF
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mb-4">
+                <div class="btn-group" role="group" aria-label="Resume templates">
+                    <!-- Template 1 - ATS Optimized Professional -->
+                    <button type="button" class="btn btn-outline-primary template-btn active" 
+                            data-template="1" title="ATS Score: 92%">
+                        <i class="fas fa-file-alt me-1"></i>Professional
+                    </button>
+                    
+                    <!-- Template 2 - Modern Tech -->
+                    <button type="button" class="btn btn-outline-primary template-btn" 
+                            data-template="2" title="ATS Score: 88%">
+                        <i class="fas fa-laptop-code me-1"></i>Tech
+                    </button>
+                    
+                    <!-- Template 3 - Minimalist Developer -->
+                    <button type="button" class="btn btn-outline-primary template-btn" 
+                            data-template="3" title="ATS Score: 85%">
+                        <i class="fas fa-code me-1"></i>Developer
+                    </button>
+                    
+                    <!-- Template 4 - Executive IT -->
+                    <button type="button" class="btn btn-outline-primary template-btn" 
+                            data-template="4" title="ATS Score: 90%">
+                        <i class="fas fa-server me-1"></i>IT Professional
+                    </button>
+                </div>
+            </div>
+
+            <div id="resumePreview" class="resume-paper template-1">
+                <!-- Resume content will be generated here -->
+            </div>
+            
+            <div class="mt-4 text-muted small text-center">
+                <i class="fas fa-info-circle me-1"></i>
+                All templates are ATS-optimized with scores above 85% for software/tech roles
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="text-center">

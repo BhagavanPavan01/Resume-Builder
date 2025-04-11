@@ -500,3 +500,54 @@ document.addEventListener('DOMContentLoaded', function() {
  }
 
 
+// Download resume as PDF - updated working version
+function downloadResumePDF() {
+    // Show loading indicator
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.innerHTML = `
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.5); z-index: 9999; display: flex; 
+            justify-content: center; align-items: center; color: white;">
+            <div style="text-align: center;">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-2">Generating PDF...</p>
+            </div>
+        </div>
+    `;
+    document.body.appendChild(loadingIndicator);
+
+    // Get the resume element
+    const element = document.getElementById('resumePreview');
+    const options = {
+        scale: 2, // Higher quality
+        useCORS: true, // For cross-origin images
+        logging: false,
+        backgroundColor: '#ffffff',
+        scrollX: 0,
+        scrollY: -window.scrollY
+    };
+
+    // Use html2canvas to capture the resume
+    html2canvas(element, options).then(canvas => {
+        // Create PDF
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const imgWidth = pdf.internal.pageSize.getWidth();
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        // Add image to PDF
+        pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+
+        // Remove loading indicator
+        document.body.removeChild(loadingIndicator);
+
+        // Download PDF
+        pdf.save(`${resumeData.personal.fullName.replace(/\s+/g, '_')}_Resume.pdf`);
+    }).catch(error => {
+        console.error('Error generating PDF:', error);
+        document.body.removeChild(loadingIndicator);
+        alert('Error generating PDF. Please try again.');
+    });
+}

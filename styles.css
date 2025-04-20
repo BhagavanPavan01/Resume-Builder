@@ -97,7 +97,7 @@ body {
     max-width: 800px;
 }
 
-/* Template 1 Styles */
+/* ----------------------------------------Template 1 Styles -----------------------------*/
 .template-1 .header {
     background-color: var(--primary-color);
     color: white;
@@ -315,3 +315,427 @@ footer {
 .template-5 .institution {
     font-weight: bold;
 }
+
+
+
+
+/* ----------------------Template 3 - Clean Developer Resume ----------------------*/
+.template-3 {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    color: #2d3748;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    line-height: 1.5;
+}
+
+.template-3 .header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4299e1;
+}
+
+.template-3 .header-text h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #2d3748;
+    font-weight: 700;
+}
+
+.template-3 .header-text h2 {
+    margin: 5px 0 0;
+    font-size: 20px;
+    color: #4a5568;
+    font-weight: 400;
+}
+
+.template-3 .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #4299e1;
+}
+
+.template-3 .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    background-color: #ebf8ff;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.template-3 .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.template-3 .contact-item i {
+    color: #4299e1;
+}
+
+.template-3 a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+.template-3 a:hover {
+    text-decoration: underline;
+}
+
+.template-3 .resume-body {
+    display: flex;
+    gap: 30px;
+}
+
+.template-3 .left-column {
+    width: 35%;
+}
+
+.template-3 .right-column {
+    width: 65%;
+}
+
+.template-3 .section {
+    margin-bottom: 25px;
+}
+
+.template-3 .section-title {
+    font-size: 18px;
+    color: #2d3748;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.template-3 .section-title i {
+    color: #4299e1;
+    font-size: 16px;
+}
+
+.template-3 .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.template-3 .skill-tag {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.template-3 .achievements-list {
+    padding-left: 20px;
+}
+
+.template-3 .achievements-list li {
+    margin-bottom: 8px;
+}
+
+.template-3 .experience-item,
+.template-3 .education-item,
+.template-3 .project-item {
+    margin-bottom: 20px;
+}
+
+.template-3 .job-header h4,
+.template-3 .education-item h4,
+.template-3 .project-header h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.template-3 .job-details,
+.template-3 .education-details {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #4a5568;
+    margin-bottom: 8px;
+}
+
+.template-3 .separator {
+    color: #cbd5e0;
+}
+
+.template-3 .company,
+.template-3 .institution {
+    font-weight: 500;
+    color: #4299e1;
+}
+
+.template-3 .job-description,
+.template-3 .education-description,
+.template-3 .project-description {
+    font-size: 14px;
+    color: #4a5568;
+}
+
+.template-3 .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.template-3 .project-link {
+    color: #4299e1;
+    font-size: 14px;
+}
+
+.template-3 .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 8px 0;
+}
+
+.template-3 .tech-tag {
+    background-color: #edf2f7;
+    color: #2d3748;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+
+
+/* -----------------------------------Template 4 - Playful Color Block Resume -------------------------------*/
+.template-4 {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.template-4 .color-block-header {
+    padding: 30px;
+    color: #333;
+}
+
+.template-4 .header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.template-4 .profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.template-4 .profile-placeholder {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.template-4 .header-text h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.template-4 .header-text h2 {
+    margin: 5px 0 0;
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.template-4 .resume-body {
+    display: flex;
+}
+
+.template-4 .left-column {
+    width: 35%;
+    padding: 20px;
+}
+
+.template-4 .right-column {
+    width: 65%;
+    padding: 30px;
+    background-color: white;
+}
+
+.template-4 .contact-section {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.template-4 .contact-section h3 {
+    margin-top: 0;
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    padding-bottom: 8px;
+}
+
+.template-4 .contact-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0 0;
+}
+
+.template-4 .contact-section li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.template-4 .contact-section i {
+    width: 20px;
+    text-align: center;
+}
+
+.template-4 .section {
+    margin-bottom: 30px;
+}
+
+.template-4 h3 {
+    font-size: 20px;
+    margin: 0 0 15px 0;
+    padding-bottom: 5px;
+}
+
+.template-4 .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.template-4 .skill-pill {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.template-4 .achievements-list {
+    padding-left: 20px;
+}
+
+.template-4 .achievements-list li {
+    margin-bottom: 8px;
+}
+
+.template-4 .summary-section {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.template-4 .summary-section h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+.template-4 .experience-item,
+.template-4 .education-item,
+.template-4 .project-item {
+    margin-bottom: 25px;
+}
+
+.template-4 .experience-header h4,
+.template-4 .education-item h4,
+.template-4 .project-header h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.template-4 .company-dates,
+.template-4 .education-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.template-4 .company {
+    font-weight: 600;
+    color: #118AB2;
+}
+
+.template-4 .institution {
+    font-weight: 600;
+    color: #118AB2;
+}
+
+.template-4 .dates {
+    color: #666;
+}
+
+.template-4 .description {
+    font-size: 14px;
+    color: #555;
+}
+
+.template-4 .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.template-4 .project-link {
+    color: #118AB2;
+    font-size: 14px;
+}
+
+.template-4 .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0;
+}
+
+.template-4 .tech-tag {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    font-weight: 500;
+}
+
+.template-4 a {
+    text-decoration: none;
+}
+
+.template-4 a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+

@@ -547,107 +547,100 @@ function generateResumeHTML() {
             // Template 3 HTML
             // [Implementation similar to template 1 but with different classes]
             // Template 3 - Clean Developer Resume
-            resumeHTML = `
-        <div class="template-3">
-            <div class="header-section">
-                <div class="header-text">
-                    <h1>${resumeData.personal.fullName}</h1>
-                    <h2>${resumeData.personal.profession}</h2>
+            // JS string for resume HTML
+resumeHTML = `
+  <div class="resume-wrapper">
+    <header class="resume-header">
+      <div class="header-left">
+        <h1 class="name-title">${resumeData.personal.fullName}</h1>
+        <p class="job-title">${resumeData.personal.profession}</p>
+      </div>
+      <div class="header-right">
+        ${resumeData.personal.photo !== 'https://via.placeholder.com/150' ?
+                    `<img src="${resumeData.personal.photo}" alt="Profile Photo" class="profile-photo">` : ''}
+      </div>
+    </header>
+
+    <section class="contact-info-bar">
+      ${resumeData.personal.email ? `<span class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:${resumeData.personal.email}">${resumeData.personal.email}</a></span>` : ''}
+      ${resumeData.personal.phone ? `<span class="contact-item"><i class="fas fa-phone"></i> <a href="tel:${resumeData.personal.phone.replace(/[^0-9]/g, '')}">${resumeData.personal.phone}</a></span>` : ''}
+      ${resumeData.personal.linkedin ? `<span class="contact-item"><i class="fab fa-linkedin"></i> <a href="${resumeData.personal.linkedin.startsWith('http') ? resumeData.personal.linkedin : 'https://' + resumeData.personal.linkedin}" target="_blank">${resumeData.personal.linkedin.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></span>` : ''}
+      ${resumeData.personal.website ? `<span class="contact-item"><i class="fas fa-globe"></i> <a href="${resumeData.personal.website.startsWith('http') ? resumeData.personal.website : 'https://' + resumeData.personal.website}" target="_blank">${resumeData.personal.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></span>` : ''}
+      ${resumeData.personal.address ? `<span class="contact-item"><i class="fas fa-map-marker-alt"></i> ${resumeData.personal.address}</span>` : ''}
+    </section>
+
+    <main class="resume-main">
+      <aside class="sidebar-left">
+        ${resumeData.personal.summary ? `
+          <section class="sidebar-section profile-summary">
+            <h2 class="section-header"><i class="fas fa-user-circle"></i> Profile</h2>
+            <p>${resumeData.personal.summary}</p>
+          </section>` : ''}
+
+        ${resumeData.skills.length > 0 ? `
+          <section class="sidebar-section skills-section">
+            <h2 class="section-header"><i class="fas fa-tools"></i> Skills</h2>
+            <ul class="skills-list">
+              ${resumeData.skills.map(skill => `<li class="skill-item">${skill}</li>`).join('')}
+            </ul>
+          </section>` : ''}
+
+        ${resumeData.achievements.length > 0 ? `
+          <section class="sidebar-section achievements-section">
+            <h2 class="section-header"><i class="fas fa-award"></i> Achievements</h2>
+            <ul class="achievements-list">
+              ${resumeData.achievements.map(ach => `<li>${ach}</li>`).join('')}
+            </ul>
+          </section>` : ''}
+      </aside>
+
+      <section class="content-right">
+        ${resumeData.experiences.length > 0 ? `
+          <section class="content-section experience-section">
+            <h2 class="section-header"><i class="fas fa-briefcase"></i> Experience</h2>
+            ${resumeData.experiences.map(exp => `
+              <div class="experience-entry">
+                <h3 class="job-title-exp">${exp.jobTitle}</h3>
+                <div class="company-dates">
+                  <span class="company-name">${exp.company}</span> | <span class="job-dates">${exp.dates}</span>
                 </div>
-                ${resumeData.personal.photo !== 'https://via.placeholder.com/150' ?
-                    `<img src="${resumeData.personal.photo}" class="profile-img" alt="Profile Photo">` : ''}
-            </div>
+                ${exp.description ? `<p class="job-description">${exp.description.replace(/\n/g, '<br>')}</p>` : ''}
+              </div>
+            `).join('')}
+          </section>` : ''}
 
-            <div class="contact-bar">
-                ${resumeData.personal.email ? `<div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:${resumeData.personal.email}">${resumeData.personal.email}</a></div>` : ''}
-                ${resumeData.personal.phone ? `<div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:${resumeData.personal.phone.replace(/[^0-9]/g, '')}">${resumeData.personal.phone}</a></div>` : ''}
-                ${resumeData.personal.linkedin ? `<div class="contact-item"><i class="fab fa-linkedin"></i> <a href="${resumeData.personal.linkedin.startsWith('http') ? resumeData.personal.linkedin : 'https://' + resumeData.personal.linkedin}" target="_blank">${resumeData.personal.linkedin.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></div>` : ''}
-                ${resumeData.personal.website ? `<div class="contact-item"><i class="fas fa-globe"></i> <a href="${resumeData.personal.website.startsWith('http') ? resumeData.personal.website : 'https://' + resumeData.personal.website}" target="_blank">${resumeData.personal.website.replace(/^https?:\/\//, '').replace(/\/$/, '')}</a></div>` : ''}
-                ${resumeData.personal.address ? `<div class="contact-item"><i class="fas fa-map-marker-alt"></i> ${resumeData.personal.address}</div>` : ''}
-            </div>
-
-            <div class="resume-body">
-                <div class="left-column">
-                    ${resumeData.personal.summary ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-user"></i> SUMMARY</h3>
-                        <p>${resumeData.personal.summary}</p>
-                    </div>` : ''}
-
-                    ${resumeData.skills.length > 0 ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-code"></i> TECHNICAL SKILLS</h3>
-                        <div class="skills-grid">
-                            ${resumeData.skills.map(skill => `
-                                <div class="skill-tag">${skill}</div>
-                            `).join('')}
-                        </div>
-                    </div>` : ''}
-
-                    ${resumeData.achievements.length > 0 ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-trophy"></i> ACHIEVEMENTS</h3>
-                        <ul class="achievements-list">
-                            ${resumeData.achievements.map(ach => `
-                                <li>${ach}</li>
-                            `).join('')}
-                        </ul>
-                    </div>` : ''}
+        ${resumeData.education.length > 0 ? `
+          <section class="content-section education-section">
+            <h2 class="section-header"><i class="fas fa-graduation-cap"></i> Education</h2>
+            ${resumeData.education.map(edu => `
+              <div class="education-entry">
+                <h3 class="degree-title">${edu.degree}</h3>
+                <div class="institution-dates">
+                  <span class="institution-name">${edu.institution}</span> | <span class="edu-dates">${edu.dates}</span>
                 </div>
+                ${edu.description ? `<p class="education-description">${edu.description.replace(/\n/g, '<br>')}</p>` : ''}
+              </div>
+            `).join('')}
+          </section>` : ''}
 
-                <div class="right-column">
-                    ${resumeData.experiences.length > 0 ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-briefcase"></i> EXPERIENCE</h3>
-                        ${resumeData.experiences.map(exp => `
-                            <div class="experience-item">
-                                <div class="job-header">
-                                    <h4>${exp.jobTitle}</h4>
-                                    <div class="job-details">
-                                        <span class="company">${exp.company}</span>
-                                        <span class="separator">|</span>
-                                        <span class="dates">${exp.dates}</span>
-                                    </div>
-                                </div>
-                                ${exp.description ? `<div class="job-description">${exp.description.replace(/\n/g, '<br>')}</div>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>` : ''}
+        ${resumeData.projects && resumeData.projects.length > 0 ? `
+          <section class="content-section projects-section">
+            <h2 class="section-header"><i class="fas fa-project-diagram"></i> Projects</h2>
+            ${resumeData.projects.map(proj => `
+              <div class="project-entry">
+                <h3 class="project-name">${proj.name} 
+                  ${proj.link ? `<a href="${proj.link.startsWith('http') ? proj.link : 'https://' + proj.link}" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                </h3>
+                ${proj.technologies ? `<p class="project-tech">${proj.technologies.split(',').map(tech => `<span class="tech-badge">${tech.trim()}</span>`).join(' ')}</p>` : ''}
+                ${proj.description ? `<p class="project-description">${proj.description.replace(/\n/g, '<br>')}</p>` : ''}
+              </div>
+            `).join('')}
+          </section>` : ''}
+      </section>
+    </main>
+  </div>
+`;
 
-                    ${resumeData.education.length > 0 ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-graduation-cap"></i> EDUCATION</h3>
-                        ${resumeData.education.map(edu => `
-                            <div class="education-item">
-                                <h4>${edu.degree}</h4>
-                                <div class="education-details">
-                                    <span class="institution">${edu.institution}</span>
-                                    <span class="separator">|</span>
-                                    <span class="dates">${edu.dates}</span>
-                                </div>
-                                ${edu.description ? `<div class="education-description">${edu.description.replace(/\n/g, '<br>')}</div>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>` : ''}
-
-                    ${resumeData.projects && resumeData.projects.length > 0 ? `
-                    <div class="section">
-                        <h3 class="section-title"><i class="fas fa-project-diagram"></i> PROJECTS</h3>
-                        ${resumeData.projects.map(proj => `
-                            <div class="project-item">
-                                <div class="project-header">
-                                    <h4>${proj.name}</h4>
-                                    ${proj.link ? `<a href="${proj.link.startsWith('http') ? proj.link : 'https://' + proj.link}" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>` : ''}
-                                </div>
-                                ${proj.technologies ? `<div class="project-tech">${proj.technologies.split(',').map(tech => `<span class="tech-tag">${tech.trim()}</span>`).join('')}</div>` : ''}
-                                ${proj.description ? `<div class="project-description">${proj.description.replace(/\n/g, '<br>')}</div>` : ''}
-                            </div>
-                        `).join('')}
-                    </div>` : ''}
-                </div>
-            </div>
-        </div>
-    `;
             break;
 
         case 4:

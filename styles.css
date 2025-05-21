@@ -320,199 +320,172 @@ footer {
 
 
 /* ----------------------Template 3 - Clean Developer Resume ----------------------*/
-.template-3 {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    color: #2d3748;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 30px;
-    line-height: 1.5;
+/* Overall container */
+.resume-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 24px;
 }
 
-.template-3 .header-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid #4299e1;
+/* Header */
+.resume-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #4a90e2;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
 }
 
-.template-3 .header-text h1 {
-    margin: 0;
-    font-size: 36px;
-    color: #2d3748;
-    font-weight: 700;
+.header-left .name-title {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
 }
 
-.template-3 .header-text h2 {
-    margin: 5px 0 0;
-    font-size: 20px;
-    color: #4a5568;
-    font-weight: 400;
+.header-left .job-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4a90e2;
+  margin-top: 6px;
 }
 
-.template-3 .profile-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #4299e1;
+.header-right .profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4a90e2;
 }
 
-.template-3 .contact-bar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    background-color: #ebf8ff;
-    padding: 12px;
-    border-radius: 5px;
-    margin-bottom: 25px;
+/* Contact bar */
+.contact-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-.template-3 .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.template-3 .contact-item i {
-    color: #4299e1;
+.contact-item i {
+  color: #4a90e2;
 }
 
-.template-3 a {
-    color: #3182ce;
-    text-decoration: none;
+/* Main layout */
+.resume-main {
+  display: flex;
+  gap: 36px;
 }
 
-.template-3 a:hover {
-    text-decoration: underline;
+/* Sidebar */
+.sidebar-left {
+  flex: 0 0 280px;
+  border-right: 2px solid #ddd;
+  padding-right: 20px;
 }
 
-.template-3 .resume-body {
-    display: flex;
-    gap: 30px;
+.sidebar-section {
+  margin-bottom: 30px;
 }
 
-.template-3 .left-column {
-    width: 35%;
+.section-header {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4a90e2;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
 }
 
-.template-3 .right-column {
-    width: 65%;
+.skills-list, .achievements-list {
+  list-style-type: none;
+  padding-left: 0;
 }
 
-.template-3 .section {
-    margin-bottom: 25px;
+.skill-item {
+  background-color: #e1ecf9;
+  color: #4a90e2;
+  display: inline-block;
+  margin: 4px 6px 4px 0;
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  border-radius: 14px;
 }
 
-.template-3 .section-title {
-    font-size: 18px;
-    color: #2d3748;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.achievements-list li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.3;
 }
 
-.template-3 .section-title i {
-    color: #4299e1;
-    font-size: 16px;
+/* Content (right) */
+.content-right {
+  flex: 1;
 }
 
-.template-3 .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+.content-section {
+  margin-bottom: 32px;
 }
 
-.template-3 .skill-tag {
-    background-color: #ebf8ff;
-    color: #2b6cb0;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 13px;
-    font-weight: 500;
+.experience-entry, .education-entry, .project-entry {
+  margin-bottom: 18px;
 }
 
-.template-3 .achievements-list {
-    padding-left: 20px;
+.job-title-exp, .degree-title, .project-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
 }
 
-.template-3 .achievements-list li {
-    margin-bottom: 8px;
+.company-dates, .institution-dates {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 8px;
 }
 
-.template-3 .experience-item,
-.template-3 .education-item,
-.template-3 .project-item {
-    margin-bottom: 20px;
+.job-description, .education-description, .project-description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
 }
 
-.template-3 .job-header h4,
-.template-3 .education-item h4,
-.template-3 .project-header h4 {
-    margin: 0 0 5px 0;
-    font-size: 16px;
-    color: #2d3748;
+.project-link {
+  margin-left: 8px;
+  color: #4a90e2;
+  text-decoration: none;
+  font-size: 0.9rem;
 }
 
-.template-3 .job-details,
-.template-3 .education-details {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 14px;
-    color: #4a5568;
-    margin-bottom: 8px;
+.project-tech {
+  margin: 6px 0;
 }
 
-.template-3 .separator {
-    color: #cbd5e0;
-}
-
-.template-3 .company,
-.template-3 .institution {
-    font-weight: 500;
-    color: #4299e1;
-}
-
-.template-3 .job-description,
-.template-3 .education-description,
-.template-3 .project-description {
-    font-size: 14px;
-    color: #4a5568;
-}
-
-.template-3 .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 5px;
-}
-
-.template-3 .project-link {
-    color: #4299e1;
-    font-size: 14px;
-}
-
-.template-3 .project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    margin: 8px 0;
-}
-
-.template-3 .tech-tag {
-    background-color: #edf2f7;
-    color: #2d3748;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
+.tech-badge {
+  display: inline-block;
+  background-color: #4a90e2;
+  color: #fff;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 0.85rem;
+  margin-right: 6px;
 }
 
 

@@ -548,7 +548,7 @@ function generateResumeHTML() {
             // [Implementation similar to template 1 but with different classes]
             // Template 3 - Clean Developer Resume
             // JS string for resume HTML
-            resumeHTML = `
+resumeHTML = `
   <div class="resume-wrapper">
     <header class="resume-header">
       <div class="header-left">
@@ -648,128 +648,109 @@ function generateResumeHTML() {
         case 4:
             // Template 4 - Playful Color Block Resume
             resumeHTML = `
-        <div class="cv-wrapper">
-  <header class="cv-header" style="background-color: #FFD166;">
-    <div class="cv-header-inner">
-      ${resumeData.personal.photo !== 'https://via.placeholder.com/150'
-                    ? `<img src="${resumeData.personal.photo}" alt="Profile Picture" class="cv-profile-pic">`
-                    : `<div class="cv-profile-placeholder" style="background-color: #EF476F;"></div>`
-                }
-      <div class="cv-header-text">
-        <h1 class="cv-name">${resumeData.personal.fullName}</h1>
-        <h2 class="cv-profession">${resumeData.personal.profession}</h2>
-      </div>
-    </div>
-  </header>
+        <div class="template-4">
+            <div class="color-block-header" style="background-color: #FFD166;">
+                <div class="header-content">
+                    ${resumeData.personal.photo !== 'https://via.placeholder.com/150' ?
+                    `<img src="${resumeData.personal.photo}" class="profile-img" alt="Profile Photo">` :
+                    `<div class="profile-placeholder" style="background-color: #EF476F;"></div>`}
+                    <div class="header-text">
+                        <h1>${resumeData.personal.fullName}</h1>
+                        <h2>${resumeData.personal.profession}</h2>
+                    </div>
+                </div>
+            </div>
 
-  <main class="cv-main">
-    <aside class="cv-sidebar" style="background-color: #F8F9FA;">
-      <section class="cv-contact-section" style="background-color: #06D6A0;">
-        <h3 class="cv-section-title">CONTACT</h3>
-        <ul class="cv-contact-list">
-          ${resumeData.personal.email ? `<li><i class="fas fa-envelope"></i> <a href="mailto:${resumeData.personal.email}" class="cv-link">${resumeData.personal.email}</a></li>` : ''}
-          ${resumeData.personal.phone ? `<li><i class="fas fa-phone"></i> <a href="tel:${resumeData.personal.phone.replace(/[^0-9]/g, '')}" class="cv-link">${resumeData.personal.phone}</a></li>` : ''}
-          ${resumeData.personal.linkedin ? `<li><i class="fab fa-linkedin"></i> <a href="${resumeData.personal.linkedin.startsWith('http') ? resumeData.personal.linkedin : 'https://' + resumeData.personal.linkedin}" target="_blank" class="cv-link">${resumeData.personal.linkedin.replace(/^https?:\/\//, '')}</a></li>` : ''}
-          ${resumeData.personal.website ? `<li><i class="fas fa-globe"></i> <a href="${resumeData.personal.website.startsWith('http') ? resumeData.personal.website : 'https://' + resumeData.personal.website}" target="_blank" class="cv-link">${resumeData.personal.website.replace(/^https?:\/\//, '')}</a></li>` : ''}
-          ${resumeData.personal.address ? `<li><i class="fas fa-map-marker-alt"></i> <span>${resumeData.personal.address}</span></li>` : ''}
-        </ul>
-      </section>
+            <div class="resume-body">
+                <div class="left-column" style="background-color: #F8F9FA;">
+                    <div class="contact-section" style="background-color: #06D6A0;">
+                        <h3>CONTACT</h3>
+                        <ul>
+                            ${resumeData.personal.email ? `<li><i class="fas fa-envelope"></i> <a href="mailto:${resumeData.personal.email}" style="color: white;">${resumeData.personal.email}</a></li>` : ''}
+                            ${resumeData.personal.phone ? `<li><i class="fas fa-phone"></i> <a href="tel:${resumeData.personal.phone.replace(/[^0-9]/g, '')}" style="color: white;">${resumeData.personal.phone}</a></li>` : ''}
+                            ${resumeData.personal.linkedin ? `<li><i class="fab fa-linkedin"></i> <a href="${resumeData.personal.linkedin.startsWith('http') ? resumeData.personal.linkedin : 'https://' + resumeData.personal.linkedin}" target="_blank" style="color: white;">${resumeData.personal.linkedin.replace(/^https?:\/\//, '')}</a></li>` : ''}
+                            ${resumeData.personal.website ? `<li><i class="fas fa-globe"></i> <a href="${resumeData.personal.website.startsWith('http') ? resumeData.personal.website : 'https://' + resumeData.personal.website}" target="_blank" style="color: white;">${resumeData.personal.website.replace(/^https?:\/\//, '')}</a></li>` : ''}
+                            ${resumeData.personal.address ? `<li><i class="fas fa-map-marker-alt"></i> <span style="color: white;">${resumeData.personal.address}</span></li>` : ''}
+                        </ul>
+                    </div>
 
-      ${resumeData.skills.length > 0
-                    ? `<section class="cv-skills-section">
-              <h3 class="cv-section-title">SKILLS</h3>
-              <div class="cv-skills-list">
-                ${resumeData.skills.map(skill => `<span class="cv-skill-badge">${skill}</span>`).join('')}
-              </div>
-            </section>`
-                    : ''
-                }
-
-      ${resumeData.achievements.length > 0
-                    ? `<section class="cv-achievements-section">
-              <h3 class="cv-section-title">ACHIEVEMENTS</h3>
-              <ul class="cv-achievements-list">
-                ${resumeData.achievements.map(ach => `<li>${ach}</li>`).join('')}
-              </ul>
-            </section>`
-                    : ''
-                }
-    </aside>
-
-    <section class="cv-content">
-      ${resumeData.personal.summary
-                    ? `<section class="cv-about-section" style="background-color: #EF476F; color: white;">
-                <h3 class="cv-section-title">ABOUT ME</h3>
-                <p>${resumeData.personal.summary}</p>
-            </section>`
-                    : ''
-                }
-
-      ${resumeData.experiences.length > 0
-                    ? `<section class="cv-experience-section">
-                <h3 class="cv-section-title" style="color: #118AB2;">EXPERIENCE</h3>
-                ${resumeData.experiences
-                        .map(
-                            exp => `
-                    <article class="cv-experience-item">
-                      <header class="cv-exp-header">
-                        <h4>${exp.jobTitle}</h4>
-                        <div class="cv-exp-company-date">
-                          <span class="cv-company">${exp.company}</span>
-                          <span class="cv-dates">${exp.dates}</span>
+                    ${resumeData.skills.length > 0 ? `
+                    <div class="section skills-section">
+                        <h3 style="color: #EF476F;">SKILLS</h3>
+                        <div class="skills-container">
+                            ${resumeData.skills.map(skill => `
+                                <div class="skill-pill" style="background-color: #118AB2; color: white;">${skill}</div>
+                            `).join('')}
                         </div>
-                      </header>
-                      ${exp.description ? `<p class="cv-exp-description">${exp.description.replace(/\n/g, '<br>')}</p>` : ''}
-                    </article>`
-                        )
-                        .join('')}
-            </section>`
-                    : ''
-                }
+                    </div>` : ''}
 
-      ${resumeData.education.length > 0
-                    ? `<section class="cv-education-section">
-                <h3 class="cv-section-title" style="color: #118AB2;">EDUCATION</h3>
-                ${resumeData.education
-                        .map(
-                            edu => `
-                    <article class="cv-education-item">
-                      <h4>${edu.degree}</h4>
-                      <div class="cv-edu-details">
-                        <span class="cv-institution">${edu.institution}</span>
-                        <span class="cv-dates">${edu.dates}</span>
-                      </div>
-                      ${edu.description ? `<p class="cv-edu-description">${edu.description.replace(/\n/g, '<br>')}</p>` : ''}
-                    </article>`
-                        )
-                        .join('')}
-            </section>`
-                    : ''
-                }
+                    ${resumeData.achievements.length > 0 ? `
+                    <div class="section">
+                        <h3 style="color: #EF476F;">ACHIEVEMENTS</h3>
+                        <ul class="achievements-list">
+                            ${resumeData.achievements.map(ach => `
+                                <li>${ach}</li>
+                            `).join('')}
+                        </ul>
+                    </div>` : ''}
+                </div>
 
-      ${resumeData.projects && resumeData.projects.length > 0
-                    ? `<section class="cv-projects-section">
-                <h3 class="cv-section-title" style="color: #118AB2;">PROJECTS</h3>
-                ${resumeData.projects
-                        .map(
-                            proj => `
-                    <article class="cv-project-item">
-                      <header class="cv-project-header">
-                        <h4>${proj.name}</h4>
-                        ${proj.link ? `<a href="${proj.link.startsWith('http') ? proj.link : 'https://' + proj.link}" target="_blank" class="cv-project-link" title="Project Link"><i class="fas fa-external-link-alt"></i></a>` : ''}
-                      </header>
-                      ${proj.technologies ? `<div class="cv-tech-tags">${proj.technologies.split(',').map(tech => `<span class="cv-tech-tag">${tech.trim()}</span>`).join('')}</div>` : ''}
-                      ${proj.description ? `<p class="cv-project-description">${proj.description.replace(/\n/g, '<br>')}</p>` : ''}
-                    </article>`
-                        )
-                        .join('')}
-            </section>`
-                    : ''
-                }
-    </section>
-  </main>
-</div>
+                <div class="right-column">
+                    ${resumeData.personal.summary ? `
+                    <div class="section summary-section" style="background-color: #EF476F; color: white;">
+                        <h3>ABOUT ME</h3>
+                        <p>${resumeData.personal.summary}</p>
+                    </div>` : ''}
 
+                    ${resumeData.experiences.length > 0 ? `
+                    <div class="section">
+                        <h3 style="color: #118AB2;">EXPERIENCE</h3>
+                        ${resumeData.experiences.map(exp => `
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <h4>${exp.jobTitle}</h4>
+                                    <div class="company-dates">
+                                        <span class="company">${exp.company}</span>
+                                        <span class="dates">${exp.dates}</span>
+                                    </div>
+                                </div>
+                                ${exp.description ? `<div class="description">${exp.description.replace(/\n/g, '<br>')}</div>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>` : ''}
+
+                    ${resumeData.education.length > 0 ? `
+                    <div class="section">
+                        <h3 style="color: #118AB2;">EDUCATION</h3>
+                        ${resumeData.education.map(edu => `
+                            <div class="education-item">
+                                <h4>${edu.degree}</h4>
+                                <div class="education-details">
+                                    <span class="institution">${edu.institution}</span>
+                                    <span class="dates">${edu.dates}</span>
+                                </div>
+                                ${edu.description ? `<div class="description">${edu.description.replace(/\n/g, '<br>')}</div>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>` : ''}
+
+                    ${resumeData.projects && resumeData.projects.length > 0 ? `
+                    <div class="section">
+                        <h3 style="color: #118AB2;">PROJECTS</h3>
+                        ${resumeData.projects.map(proj => `
+                            <div class="project-item">
+                                <div class="project-header">
+                                    <h4>${proj.name}</h4>
+                                    ${proj.link ? `<a href="${proj.link.startsWith('http') ? proj.link : 'https://' + proj.link}" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                                </div>
+                                ${proj.technologies ? `<div class="technologies">${proj.technologies.split(',').map(tech => `<span class="tech-tag" style="background-color: #06D6A0;">${tech.trim()}</span>`).join('')}</div>` : ''}
+                                ${proj.description ? `<div class="description">${proj.description.replace(/\n/g, '<br>')}</div>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>` : ''}
+                </div>
+            </div>
+        </div>
     `;
             break;
 
